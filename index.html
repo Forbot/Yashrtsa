@@ -58,19 +58,31 @@
             max-width: 80px;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
             .grid-container {
-                grid-template-columns: repeat(2, 1fr);
+                gap: 5px;
             }
-        }
 
-        @media (max-width: 480px) {
-            .grid-container {
-                grid-template-columns: 1fr;
+            .grid-item {
+                padding: 5px;
             }
 
             .grid-item img {
                 max-width: 60px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .grid-container {
+                gap: 2px;
+            }
+
+            .grid-item {
+                padding: 2px;
+            }
+
+            .grid-item img {
+                max-width: 50px;
             }
         }
     </style>
