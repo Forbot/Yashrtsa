@@ -13,49 +13,71 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
             background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        
+        img.banner {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(3, 100px);
-            grid-template-rows: repeat(3, 100px);
+            grid-template-columns: repeat(3, 1fr);
             gap: 10px;
+            width: 100%;
+            max-width: 600px;
         }
+
         .grid-item {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100px;
-            height: 100px;
             background-color: #fff;
             border: 2px solid #ddd;
             border-radius: 10px;
             cursor: pointer;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s;
+            padding: 10px;
         }
+
         .grid-item:hover {
             background-color: #e0e0e0;
         }
+
         .grid-item img {
-            width: 100px;
-            height: 100px;
+            width: 100%;
+            height: auto;
+            max-width: 80px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-item img {
+                max-width: 60px;
+            }
         }
     </style>
 </head>
 
 <body>
-<div>
-<img src="Banner.png">
-</div>
-<p></p>
+    <img src="Banner.png" alt="Banner" class="banner">
 <div class="grid-container">
         <!-- Button 1 -->
         <div class="grid-item" onclick="playSound(1)">
@@ -140,18 +162,6 @@
         <!-- Button 6 -->
         <div class="grid-item" onclick="playSound(6)">
             <img src="https://via.placeholder.com/60" alt="Button 6">
-        </div>
-        <!-- Button 7 -->
-        <div class="grid-item" onclick="playSound(7)">
-            <img src="https://via.placeholder.com/60" alt="Button 7">
-        </div>
-        <!-- Button 8 -->
-        <div class="grid-item" onclick="playSound(8)">
-            <img src="https://via.placeholder.com/60" alt="Button 8">
-        </div>
-        <!-- Button 9 -->
-        <div class="grid-item" onclick="playSound(9)">
-            <img src="https://via.placeholder.com/60" alt="Button 9">
         </div>
     </div>
 
